@@ -23,9 +23,9 @@
         navigator.geolocation.getCurrentPosition(position => {
           const lat = position.coords.latitude;
           const long = position.coords.longitude;
-          document.getElementById('lat').textContent = lat;
-          document.getElementById('long').textContent = long;
-          console.log(position); // Logs all position information.
+          document.getElementById('latitude').textContent = lat;
+          document.getElementById('longitude').textContent = long;
+          console.log(position); // Logs all current user position information.
         });
       } else {
         console.log('Geolocation NOT available.');
@@ -33,7 +33,7 @@
     </script>
     <h1>Selfie App</h1>
     <p>Where in the world am I!</p>
-    <p>Latitude: <span id="lat"></span>&deg;</p>
-    <p>Longitude: <span id="long"></span>&deg;</p>
+    <p>Latitude: <span id="latitude"></span>&deg;</p>
+    <p>Longitude: <span id="longitude"></span>&deg;</p>
   </body>
 </html>

@@ -17,12 +17,23 @@
     <script>
       console.log('Here There Be Dragons');
 
+      // Obtain current user position in lat and long coords.
       if ('geolocation' in navigator) {
         console.log('Geolocation available.');
+        navigator.geolocation.getCurrentPosition(position => {
+          const lat = position.coords.latitude;
+          const long = position.coords.longitude;
+          document.getElementById('lat').textContent = lat;
+          document.getElementById('long').textContent = long;
+          console.log(position); // Logs all position information.
+        });
       } else {
         console.log('Geolocation NOT available.');
       }
     </script>
-    <p>Hello world!</p>
+    <h1>Selfie App</h1>
+    <p>Where in the world am I!</p>
+    <p>Latitude: <span id="lat"></span>&deg;</p>
+    <p>Longitude: <span id="long"></span>&deg;</p>
   </body>
 </html>

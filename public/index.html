@@ -17,10 +17,10 @@
     <script>
       console.log('Here There Be Dragons');
 
-      if ('geolocation') {
-        console.log('Geolocation available');
+      if ('geolocation' in navigator) {
+        console.log('Geolocation available.');
       } else {
-        console.log('Geolocation not available');
+        console.log('Geolocation NOT available.');
       }
     </script>
     <p>Hello world!</p>

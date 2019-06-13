@@ -11,7 +11,10 @@
   <body>
     <main>
       <h1>Selfie App</h1>
-      <h2>Where in the world am I!</h2>
+      <h2>User:</h2>
+      <form class="text-input">
+        <input type="text" name="user" id="userName" />
+      </form>
       <h3 class="part1">Latitude: <span id="latitude"></span>&deg;</h3>
       <h3 class="part2">Longitude: <span id="longitude"></span>&deg;</h3>
       <div class="rect rect1">
@@ -97,23 +100,22 @@
       <!-- Attached JavaScript event handlers for an element. -->
       <div class="circle circle1">
         <svg
-          id="geolocate"
+          id="submit"
           width="100%"
           height="100%"
           viewBox="0 0 50 50"
           preserveAspectRatio="none"
-          xmlns:xlink=""
         >
           <circle cx="25" cy="25" r="25" fill="currentcolor" class="pointer" />
           <text
             fill="#ffffff"
-            font-size="12"
-            font-family="Verdana"
+            font-size="14"
+            font-family="Helvetica"
             x="2"
             y="25"
           >
             <tspan x="8" y="25">Click</tspan>
-            <tspan x="8" y="35">Me</tspan>
+            <tspan x="8" y="35">Here</tspan>
           </text>
         </svg>
       </div>
@@ -126,42 +128,8 @@
         >
           <circle cx="25" cy="25" r="25" fill="currentcolor" />
         </svg>
-        <!--<button id="geolocate">Geolocate</button>-->
       </div>
     </main>
-    <script>
-      console.log('Here There Be Dragons');
-      // Obtain current user position in lat and long coords.
-      document.getElementById('geolocate').addEventListener('click', event => {
-        if ('geolocation' in navigator) {
-          console.log('Geolocation available.');
-          navigator.geolocation.getCurrentPosition(async position => {
-            const lat = position.coords.latitude;
-            const long = position.coords.longitude;
-            document.getElementById('latitude').textContent = lat;
-            document.getElementById('longitude').textContent = long;
-
-            // Create a coordinate data js object.
-            const coordData = { lat, long };
-            // Package the js object as a POST.
-            const options = {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              body: JSON.stringify(coordData) // body data type must match "Content-Type" header
-            };
-            // Send the package to my end point.
-            const response = await fetch('/api', options);
-            const data = await response.json();
-            console.log(data);
-            console.log(position); // Logs all current user position information.
-          });
-        } else {
-          console.log('Geolocation NOT available.');
-        }
-      });
-    </script>
+    <script src="sketch.js"></script>
   </body>
 </html>

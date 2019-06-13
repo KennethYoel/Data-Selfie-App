@@ -1,26 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="author" content="Ken Gutierrez" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Selfie App</title>
-    <style>
-      body {
-        background-color: rgb(0, 43, 54);
-        color: rgb(101, 123, 131);
-        padding: 0;
-        margin: 0;
-      }
-    </style>
+    <!--Added a forward slash in front of the file to link to the html page.-->
+    <link rel="stylesheet" type="text/css" href="/futurismo.css" />
   </head>
   <body>
-    <h1>Selfie App</h1>
-    <p>Where in the world am I!
-      </br></br>
-      Latitude: <span id="latitude"></span>&deg;</br>
-      Longitude: <span id="longitude"></span>&deg;</br>
-    </p>
-    <button id="geolocate">Geolocate</button>
+    <main>
+      <h1>Selfie App</h1>
+      <h2>Where in the world am I!</h2>
+      <h3 class="part1">Latitude: <span id="latitude"></span>&deg;</h3>
+      <h3 class="part2">Longitude: <span id="longitude"></span>&deg;</h3>
+      <div class="rect rect1">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect3">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect4">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect5">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect6">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect7">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <div class="rect rect8">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <rect width="100" height="100" fill="currentcolor" />
+        </svg>
+      </div>
+      <!-- Attached JavaScript event handlers for an element. -->
+      <div class="circle circle1">
+        <svg
+          id="geolocate"
+          width="100%"
+          height="100%"
+          viewBox="0 0 50 50"
+          preserveAspectRatio="none"
+          xmlns:xlink=""
+        >
+          <circle cx="25" cy="25" r="25" fill="currentcolor" class="pointer" />
+          <text
+            fill="#ffffff"
+            font-size="12"
+            font-family="Verdana"
+            x="2"
+            y="25"
+          >
+            <tspan x="8" y="25">Click</tspan>
+            <tspan x="8" y="35">Me</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="circle circle2">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 50 50"
+          preserveAspectRatio="none"
+        >
+          <circle cx="25" cy="25" r="25" fill="currentcolor" />
+        </svg>
+        <!--<button id="geolocate">Geolocate</button>-->
+      </div>
+    </main>
     <script>
       console.log('Here There Be Dragons');
       // Obtain current user position in lat and long coords.
@@ -53,7 +161,7 @@
         } else {
           console.log('Geolocation NOT available.');
         }
-    });
+      });
     </script>
   </body>
 </html>

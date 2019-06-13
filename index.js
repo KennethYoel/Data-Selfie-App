@@ -17,11 +17,12 @@ app.post('/api', (request, response) => {
   const timeStamp = Date.now();
   data.timeStamp = timeStamp;
   database.insert(data);
-  console.log(database);
   response.json({
     status: 'success',
     timeStamp: timeStamp,
     latitude: data.lat,
-    longitude: data.long
+    longitude: data.long,
+    user: data.userInput
   });
+  console.log(database);
 });

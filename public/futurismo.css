@@ -53,6 +53,12 @@ h3.part1 {
 h3.part2 {
   grid-column: 1 / -1;
 }
+#sketch-holder {
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
+  margin-top: 13px;
+}
 .text-input {
   grid-row: 1;
   grid-column: 4 / 5;

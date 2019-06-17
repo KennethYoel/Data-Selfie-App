@@ -4,17 +4,21 @@
     <meta name="author" content="Ken Gutierrez" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
     <title>Data Selfie App</title>
-    <!--Added a forward slash in front of the file to link to the html page.-->
+    <!--Added a forward slash in front of the file to link to the html page in Express, remove it outside of Express.-->
     <link rel="stylesheet" type="text/css" href="/futurismo.css" />
   </head>
   <body>
     <main>
-      <h1>Selfie App</h1>
-      <h2>User:</h2>
       <form class="text-input">
-        <input type="text" name="user" id="userName" />
+        <input type="text" name="user" id="userName" placeholder="Name it.." />
       </form>
+
+      <h1>Selfie App</h1>
+      <div id="sketch-holder"></div>
       <h3 class="part1">Latitude: <span id="latitude"></span>&deg;</h3>
       <h3 class="part2">Longitude: <span id="longitude"></span>&deg;</h3>
       <div class="rect rect1">
@@ -110,12 +114,13 @@
           <text
             fill="#ffffff"
             font-size="14"
-            font-family="Helvetica"
+            font-family="adobe-caslon-pro, serif"
+            font-weight="400"
             x="2"
             y="25"
           >
-            <tspan x="8" y="25">Click</tspan>
-            <tspan x="8" y="35">Here</tspan>
+            <tspan x="6" y="25">Submit</tspan>
+            <tspan x="6" y="35">Btn</tspan>
           </text>
         </svg>
       </div>

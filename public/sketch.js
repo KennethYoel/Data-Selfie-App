@@ -10,7 +10,7 @@ function setup() {
   //canvas.parent('sketch-holder');
   const video = createCapture(VIDEO);
   video.size(640, 480);
-  video.parent('sketch-holder');
+  video.parent('video-holder');
 
   let lat, long;
   // Obtain current user position in lat and long coords.

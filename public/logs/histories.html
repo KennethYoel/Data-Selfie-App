@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Ken Gutierrez" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="/grid.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex-container"><h1>Selfie App</h1></div>
+    <main id="main" class="wrapper"></main>
+    <script>
+      getData();
+
+      async function getData() {
+        const response = await fetch('/api');
+        const data = await response.json();
+
+        for (item of data) {
+          const root = document.createElement('div');
+          root.className = 'box';
+          const userInput = document.createElement('p');
+          const geo = document.createElement('p');
+          const date = document.createElement('p');
+          const image = document.createElement('img');
+
+          userInput.textContent = `userInput: ${item.userInput}`;
+          geo.textContent = `${item.lat}°, ${item.long}°`;
+          const dateString = new Date(item.timeStamp).toLocaleString();
+          date.textContent = dateString;
+          image.src = item.image64;
+
+          root.append(userInput, geo, date, image);
+          const element = document.getElementById('main');
+          element.append(root);
+        }
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>

@@ -10,6 +10,17 @@ const database = new dataStore('database.db');
 database.loadDatabase(); // Create and save database to local file named database.db.
 //database.insert({ name: 'privateGee', status: 'danger' }); // Adding json data into a database.
 
+// GET method route
+app.get('/api', (request, response) => {
+  database.find({}, (err, data) => {
+    if (err) {
+      response.end();
+      return;
+    }
+    response.json(data);
+  });
+});
+
 // POST method route
 app.post('/api', (request, response) => {
   console.log('I got a request!');
@@ -17,12 +28,6 @@ app.post('/api', (request, response) => {
   const timeStamp = Date.now();
   data.timeStamp = timeStamp;
   database.insert(data);
-  response.json({
-    status: 'success',
-    timeStamp: timeStamp,
-    latitude: data.lat,
-    longitude: data.long,
-    user: data.userInput
-  });
+  response.json(data);
   console.log(database);
 });

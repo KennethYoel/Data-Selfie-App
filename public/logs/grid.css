@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Battling';
+  src: url('http://labs.jensimmons.com/examples/fonts/Battling1NPmed.otf')
+    format('opentype');
+}
+
+body {
+  background-color: #fff;
+  color: rgb(220, 50, 47);
+  margin: 40px;
+}
+
+h1 {
+  font-family: Battling, Helvetica, serif;
+  text-transform: uppercase;
+  display: block;
+  font-size: 7.8vw;
+  margin: 0.15em 0 0;
+  padding: 0;
+  line-height: 0.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background-color: rgb(238, 232, 213);
+  color: #404040;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.box:nth-child(even) {
+  background-color: rgb(147, 161, 161);
+  color: #000;
+}
+
+.wrapper {
+  margin: 10vh 25vw;
+  height: auto;
+  width: 54vw;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+}

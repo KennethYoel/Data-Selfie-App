@@ -8,7 +8,7 @@
     format('opentype');
 }
 body {
-  background-color: rgb(0, 43, 54);
+  background-color: #fff;
   color: rgb(220, 50, 47);
 }
 main {
@@ -66,8 +66,8 @@ h3.part2 {
   justify-self: center;
 }
 input[type='text'] {
-  background-color: rgb(7, 54, 66);
-  color: white;
+  background-color: rgb(238, 232, 213);
+  color: rgb(147, 161, 161);
   font-family: Battling, Helvetica, serif;
   text-transform: uppercase;
   text-align: center;
